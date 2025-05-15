@@ -1,0 +1,36 @@
+<Window x:Class="Task2.Windows.TestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Task2.Windows"
+        mc:Ignorable="d"
+        Title="TestWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical">
+                    <Label>Name: </Label>
+                    <Label>Executing time</Label>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="0 6 0 0">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox Name="TitleTextBox" Width="50"></TextBox>
+                        <Label>Test password: </Label>
+                        <TextBox Name="PasswordTextBox" Margin="5 0 0 0" MinWidth="100"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label>h:</Label><TextBox Name="ExecutingTimeHourTimeBox" Height="17" MinWidth="20">0</TextBox>
+                        <Label>m:</Label><TextBox Name="ExecutingTimeMinuteTimeBox" Height="17" MinWidth="20">10</TextBox>
+                        <Label>s:</Label><TextBox Name="ExecutingTimeSecondTimeBox" Height="17" MinWidth="20">0</TextBox>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <Button Click="OnAppendQuestionClicked" Width="50" HorizontalAlignment="Left" Margin="5 10 0 0">Append question</Button>
+            <DataGrid Name="Table" CanUserAddRows="False" CanUserDeleteRows="False" 
+                      IsReadOnly="True" SelectionMode="Single" Focusable="False"
+                      SelectionChanged="Table_OnSelectionChanged"></DataGrid>
+            <Button Click="OnSaveButtonClicked">Create</Button>
+        </StackPanel>
+    </Grid>
+</Window>
